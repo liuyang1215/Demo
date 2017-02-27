@@ -1,23 +1,29 @@
 package Day02;
 
+import java.util.Scanner;
+
 public class Home {
 
 	public static void main(String[] args) {
-		int n = 44;
-		int[] str = new int[n];
-		str[0] = 1;
-		str[1] = 1;
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int fn = f(n);
+		double a = (double)f(n)/f(n+1);
+		System.out.println(a);
+		System.out.println(fn);
+	
 		
-		System.out.print(str[0] +" " +str[1]+" ");
-		
-		for(int i = 2;i<n;i++){
-			str [i]=str[i-1]+str[i-2];
-			System.out.print(str[i] +" ");
-			if(i%10 ==0){
-				System.out.println();
-			}
-		}
 
 	}
+	public static int f(int n){
+		if(n == 1 || n==2){
+			return 1;
+		}else{
+			return f(n-1)+f(n-2);
+		}
+		
+	}
+
+
 
 }
