@@ -16,7 +16,8 @@ public class ICBCImpl implements ICBC{
 
 	
 	public boolean drawMoney(double number) {
-		if(number < money){
+		if(number < money) {
+			money -= number;
 			return true;
 		}else{
 			return false;
@@ -36,8 +37,6 @@ public class ICBCImpl implements ICBC{
 		if(number < money){
 			number -= money;
 		}
-		
-		
 	}
 
 }
